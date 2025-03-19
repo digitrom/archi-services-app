@@ -7,12 +7,12 @@ export default function SearchBar ({onIsProvidedChange, isProvidedOnly, filterTe
                 <input type={"text"}
                 value={filterText}
                        placeholder="Search..."
-                       onChange={(e) => onFilterTextChange(e.target.value)}
+                       onChange={onFilterTextChange}
                 />
                 <label>
                     <input type="checkbox"
                            checked={isProvidedOnly}
-                           onChange={(e) => onIsProvidedChange(e.target.checked)}/>
+                           onChange={onIsProvidedChange}/>
                     {' '}
                     Only show available services
                 </label></form>

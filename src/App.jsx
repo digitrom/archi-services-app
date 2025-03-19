@@ -19,15 +19,23 @@ function App() {
     const [isProvidedOnly, setIsProvidedOnly] = useState(false)
     const [filterText, setFilterText] = useState('')
 
+    function onFilterTextChange(e) {
+        setFilterText(e.target.value)
+    }
+
+    function onIsProvidedChange(e) {
+        setIsProvidedOnly(e.target.checked)
+    }
+
 
     return (
         <>
             <FilterableServiceTable
                 services={services}
-                onIsProvidedChange={setIsProvidedOnly}
+                onIsProvidedChange={onIsProvidedChange}
                 isProvidedOnly={isProvidedOnly}
                 filterText={filterText}
-                onFilterTextChange={setFilterText}
+                onFilterTextChange={onFilterTextChange}
             />
 
         </>
